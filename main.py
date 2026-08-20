@@ -37,13 +37,14 @@ book_list = {} #엔티티 저장용
 shelf_num = 1
 w = 0
 h = 0
+g = 0
 floor = 1
 global chair_mode
 chair_mode = False
 
 
 pdf_memory = {}
-pdf_base_url = 'https://raw.githubusercontent.com/teddymin/in_your_library/assets/'
+pdf_base_url = 'https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/'
 
 def get_pdf_doc(filename):
     if filename in pdf_memory:
@@ -107,10 +108,10 @@ class chair(Entity): #의자 클래스(부모)
             rotation = rotation,
             scale = scale,
         )
-        self.chair_1 = Entity(parent = self,model = 'cube',scale = (2,1.5,1.5),position = (0,1,0),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/chair.jpg'))
-        self.chair_2 = Entity(parent = self,model = 'cube',scale = (2,2,0.225),position = (0,2.75,8.25+0.1125-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/chair.jpg'))
-        self.chair_3 = Entity(parent = self,model = 'cube',scale = (0.2,1,1.5-0.225),position = (13.3-0.2-14,2.25,14+0.115-5-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/chair.jpg'))
-        self.chair_4 = Entity(parent = self,model = 'cube',scale = (0.2,1,1.5-0.225),position = (0.7+0.2,2.25,14+0.115-5-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/chair.jpg'))
+        self.chair_1 = Entity(parent = self,model = 'cube',scale = (2,1.5,1.5),position = (0,1,0),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/chair.jpg'))
+        self.chair_2 = Entity(parent = self,model = 'cube',scale = (2,2,0.225),position = (0,2.75,8.25+0.1125-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/chair.jpg'))
+        self.chair_3 = Entity(parent = self,model = 'cube',scale = (0.2,1,1.5-0.225),position = (13.3-0.2-14,2.25,14+0.115-5-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/chair.jpg'))
+        self.chair_4 = Entity(parent = self,model = 'cube',scale = (0.2,1,1.5-0.225),position = (0.7+0.2,2.25,14+0.115-5-9),color = color.gray,collider ='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/chair.jpg'))
 
 
 class pdf_book: #클래스 정의
@@ -125,29 +126,29 @@ class pdf_book: #클래스 정의
         
 
 #맵 만들기
-main_floor = Entity(model='cube', position = (50,0,50),scale = (100,1,100),color = color.gray,collider='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/brown_rug.jpg'),texture_scale = (30,20))
-main_ceiling = Entity(model = 'cube',position = (12.5,20,12.5),scale = (25,1,60),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
-main_left_wall = Entity(model = 'cube',position = (0,12.5,12.5),scale = (1,25,25),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/window_3.jpg'),texture_scale = (1,1.3))
-main_right_wall = Entity(model = 'cube',position = (25,12.5,20),scale = (1,25,40),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
-main_back_wall = Entity(model = 'cube',position = (12.5,12.5,0),scale = (25,25,1),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
-main_front_wall = Entity(model = 'cube', position = (7.5,12.5,25),scale = (15,25,1),color = color.white, collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
-tongro_front_wall = Entity(model = 'cube', position = (20,12.5,40), scale = (10, 25,1),color = color.white, collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall.jpg'),texture_scale=(2.5,2))
-tongro_left_wall = Entity(model = 'cube', position = (15,12.5,32.5),scale = (1,25,15),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall.jpg'),texture_scale =(2.5,2))
-sf_floor_1 = Entity(model = 'cube', position = (12.5,10,3),scale = (25,1,6),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
-sf_floor_2 = Entity(model = 'cube', position = (22.5,10,19.25),scale = (5,1,26.5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
-wharo = Entity(model = 'cube', position = (7.5,1.5,34),scale = (5,3,20),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wharo.jpg'))
-acja = Entity(model = 'cube', position = (20,4,39.5),scale = (1.5,1.5,0.5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/ttabong.jpg'))
-moon = Entity(model = 'cube' , position = (24,3,37),scale = (1,6,5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/door.jpg'))
-elevator = Entity(model  = 'cube', position = (3,1,9),scale =(6,1,6),color = color.gray , collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
+main_floor = Entity(model='cube', position = (50,0,50),scale = (100,1,100),color = color.gray,collider='box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/brown_rug.jpg'),texture_scale = (30,20))
+main_ceiling = Entity(model = 'cube',position = (12.5,20,12.5),scale = (25,1,60),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
+main_left_wall = Entity(model = 'cube',position = (0,12.5,12.5),scale = (1,25,25),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/window_3.jpg'),texture_scale = (1,1.3))
+main_right_wall = Entity(model = 'cube',position = (25,12.5,20),scale = (1,25,40),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
+main_back_wall = Entity(model = 'cube',position = (12.5,12.5,0),scale = (25,25,1),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
+main_front_wall = Entity(model = 'cube', position = (7.5,12.5,25),scale = (15,25,1),color = color.white, collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall.jpg'),texture_scale = (2.5,2))
+tongro_front_wall = Entity(model = 'cube', position = (20,12.5,40), scale = (10, 25,1),color = color.white, collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall.jpg'),texture_scale=(2.5,2))
+tongro_left_wall = Entity(model = 'cube', position = (15,12.5,32.5),scale = (1,25,15),color = color.white,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall.jpg'),texture_scale =(2.5,2))
+sf_floor_1 = Entity(model = 'cube', position = (12.5,10,3),scale = (25,1,6),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
+sf_floor_2 = Entity(model = 'cube', position = (22.5,10,19.25),scale = (5,1,26.5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
+wharo = Entity(model = 'cube', position = (7.5,1.5,34),scale = (5,3,20),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wharo.jpg'))
+acja = Entity(model = 'cube', position = (20,4,39.5),scale = (1.5,1.5,0.5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/ttabong.jpg'))
+moon = Entity(model = 'cube' , position = (24,3,37),scale = (1,6,5),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/door.jpg'))
+elevator = Entity(model  = 'cube', position = (3,1,9),scale =(6,1,6),color = color.gray , collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),texture_scale = (1.5, 1))
 elevator.dy = 1
-acja_down = Entity(model = 'quad',scale = (1,1),parent=acja,y=-0.501, rotation_x=90,color = color.white,double_sided = True,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'))
-acja_up = Entity(model = 'quad',scale = (1,1),parent=acja,y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'))
-acja_left = Entity(model='quad',scale = (1,1),parent = acja,x=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 270)
-acja_right = Entity(model='quad',scale = (1,1),parent = acja,x=+0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 90)
+acja_down = Entity(model = 'quad',scale = (1,1),parent=acja,y=-0.501, rotation_x=90,color = color.white,double_sided = True,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'))
+acja_up = Entity(model = 'quad',scale = (1,1),parent=acja,y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'))
+acja_left = Entity(model='quad',scale = (1,1),parent = acja,x=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 270)
+acja_right = Entity(model='quad',scale = (1,1),parent = acja,x=+0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 90)
 
-moon_up = Entity(model = 'quad',scale = (1,1),parent=moon,y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'))
-moon_left = Entity(model='quad',scale = (1,1),parent = moon,z=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 180)
-moon_right = Entity(model='quad',scale = (1,1),parent = moon,z=+0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 0)
+moon_up = Entity(model = 'quad',scale = (1,1),parent=moon,y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'))
+moon_left = Entity(model='quad',scale = (1,1),parent = moon,z=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 180)
+moon_right = Entity(model='quad',scale = (1,1),parent = moon,z=+0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_wall2.jpg'),double_sided = True,rotation_y = 0)
 
 
 
@@ -160,20 +161,20 @@ page_select_label = Text(text='page\nselect',origin=(0, 0),parent=page_select,z=
 
 book= Entity(model = 'quad', scale = (3.2,1.8), position = (12,30,11),collider = 'box',rotation = (0,315,0),color = color.white)
 
-shelf_01 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,2,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_02 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,4.3,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_03 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,6.6,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_04 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,8.9,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_21 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,12,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_22 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,14.3,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_23 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,16.6,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_06 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,2,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_07 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,4.3,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_08 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,6.6,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_08 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,8.9,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_24 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,12,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_25 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,14.3,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
-shelf_26 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,16.6,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_01 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,2,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_02 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,4.3,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_03 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,6.6,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_04 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,8.9,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_21 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,12,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_22 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,14.3,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_23 = Entity(model='cube', scale = (25,0.3,1.5),position = (12.5,16.6,0.75),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_06 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,2,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_07 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,4.3,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_08 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,6.6,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_08 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,8.9,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_24 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,12,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_25 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,14.3,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
+shelf_26 = Entity(model='cube', scale = (1.5,0.3,32.5),position = (24.25,16.6,16.25),color = color.gray,collider = 'box',texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/wood_shelf.jpg'),texture_scale = (3,3))
 main_chair = chair(position = (14,0,9),rotation = (0,315,0)) #chair entity
 
 book.title = pdf_list[0]+'.pdf'
@@ -256,14 +257,14 @@ for name in pdf_list:
     floor = pdf_book_list[name].floor
     
     if shelf_num == 1:
-        book_list[name]= Entity(model = 'cube', scale =(0.5,2,1.5),position = (1.5+g*0.5,3.15+h*2.3+10*(floor-1),1.3),color = color.gray,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/book.jpg'),name = name,collider = 'box')
+        book_list[name]= Entity(model = 'cube', scale =(0.5,2,1.5),position = (1.5+g*0.5,3.15+h*2.3+10*(floor-1),1.3),color = color.gray,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/book.jpg'),name = name,collider = 'box')
     
     else:
-        book_list[name]= Entity(model = 'cube', scale =(0.5,2,1.5),position = (23.7,3.15+h*2.3+10*(floor-1),1.5+g*0.5),color = color.gray,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/book.jpg'),name = name,collider = 'box',rotation_y = 270)
+        book_list[name]= Entity(model = 'cube', scale =(0.5,2,1.5),position = (23.7,3.15+h*2.3+10*(floor-1),1.5+g*0.5),color = color.gray,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/book.jpg'),name = name,collider = 'box',rotation_y = 270)
     
-    book_down = Entity(model = 'quad',scale = (1,1),parent=book_list[name],y=-0.501, rotation_x=90,color = color.white,double_sided = True,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/book_under.jpg'))
-    book_up = Entity(model = 'quad',scale = (1,1),parent=book_list[name],y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/book_under.jpg'))
-    book_behind = Entity(model='quad',scale = (1,1),parent = book_list[name],z=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/inyourlib/main/assets/book_under.jpg'),double_sided = True,rotation_z = 90)
+    book_down = Entity(model = 'quad',scale = (1,1),parent=book_list[name],y=-0.501, rotation_x=90,color = color.white,double_sided = True,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/book_under.jpg'))
+    book_up = Entity(model = 'quad',scale = (1,1),parent=book_list[name],y=0.501, rotation_x=90,rotation_y = 90,texture = load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/book_under.jpg'))
+    book_behind = Entity(model='quad',scale = (1,1),parent = book_list[name],z=-0.501,texture=load_web_texture('https://raw.githubusercontent.com/teddymin/in_your_library/main/assets/book_under.jpg'),double_sided = True,rotation_z = 90)
     book_label = Text(text=name,origin=(0, 0),parent=book_list[name],z=0.51,rotation = (0,180,90),scale = (6,12))
 
 
